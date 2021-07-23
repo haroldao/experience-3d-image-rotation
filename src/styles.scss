@@ -1,19 +1,25 @@
 *,
 *::before,
-*::after{
+*::after {
   margin: 0;
   padding: 0;
 }
 
 body {
+  background-color: red;
   font-family: sans-serif;
+}
 
-  h1{
-    font-size: 13vw;
-  }
+h1{
+  font-size: 13vw;
+}
 
-  img{
-    max-width: 100%;
-    vertical-align: middle;
-  }
+img{
+  width: 100vw;
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+section{
+  min-height: 100vh;
 }
