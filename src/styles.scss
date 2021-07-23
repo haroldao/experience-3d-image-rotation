@@ -7,19 +7,19 @@
 
 body {
   font-family: sans-serif;
-}
 
+  //Smooth Scroll
+  &::-webkit-scrollbar{
+    display: none;
+    -ms-overflow-style: none;
+  }
+}
 //Smooth Scroll
-body::-webkit-scrollbar{
-  display: none;
-  -ms-overflow-style: none;
-}
-
 ::-webkit-scrollbar{
   display: none;
   -ms-overflow-style: none;
 }
-// End Smooth Scroll
+
 
 h1{
   font-size: 13vw;
