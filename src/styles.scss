@@ -1,0 +1,13 @@
+*,
+*::before,
+*::after{
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  h1{
+    font-size: 13vw;
+  }
+}
