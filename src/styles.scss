@@ -22,6 +22,8 @@ body {
   -ms-overflow-style: none;
 }
 
+
+
 img{
   max-width: 100%;
   vertical-align: middle;
@@ -48,6 +50,9 @@ section{
     width: 45%;
     margin: auto;
   }
+  img{
+    opacity: 1;
+  }
   // img{
   //   padding: 120px;
   // }
@@ -68,5 +73,12 @@ section{
   //     justify-content: center;
   //   }
   // }
+  &.in-view{
+    // media user motion
+    @media (prefers-reduced-motion: no-preference){
+      img{
+        animation: show .7s .2s both cubic-bezier(0.77,-0.13,0.54,1.15);
+      }
+    }
+  }
 }
-
