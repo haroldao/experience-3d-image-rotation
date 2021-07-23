@@ -94,7 +94,7 @@ const smoothScroller = () => {
     scrollable.style.transform = `translateY(${-scroll.current}px)`;
   }
 
-  window.requestAnimationFrame(siSmoothScroller);
+  window.requestAnimationFrame(smoothScroller);
 };
 
 /*------------------------------
