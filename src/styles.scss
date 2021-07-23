@@ -6,7 +6,6 @@
 }
 
 body {
-  background-color: red;
   font-family: sans-serif;
 }
 
@@ -15,11 +14,19 @@ h1{
 }
 
 img{
-  width: 100vw;
   max-width: 100%;
   vertical-align: middle;
 }
 
 section{
-  min-height: 100vh;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: calc(10vw + 100px);
+  background-image: linear-gradient(120deg, #97ebd6, #9aa6f9);
+  &:nth-child(2n){
+    background-image: linear-gradient(30deg, #dc72ef, #fe0000);
+  }
 }
+
