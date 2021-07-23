@@ -19,7 +19,7 @@ const scroll = {
   target: 0,
   last: 0,
   limit: 0,
-  ease: 0.2,
+  ease: 0.07,
 };
 
 /*------------------------------
