@@ -1,6 +1,6 @@
+// import "./scroll";
 import "./animation.scss";
 import "./styles.scss";
-// import "./scroll";
 
 const sections = document.querySelectorAll("section")
 const observer = new IntersectionObserver(entries => {
