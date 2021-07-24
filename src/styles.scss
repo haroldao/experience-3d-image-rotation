@@ -73,7 +73,6 @@ img{
     pointer-events: none;
     animation: intro-box 1s 3s both cubic-bezier(0.45,0.05,0.55,0.95);
     .box{
-      padding: 24px;
       width: 360px;
       width: 35vw;
       height: 200px;
@@ -86,6 +85,9 @@ img{
       .column{
         display: flex;
         justify-content: inherit;
+        span{
+          padding: 24px;
+        }
       }
 
     }
