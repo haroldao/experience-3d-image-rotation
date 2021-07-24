@@ -5,8 +5,22 @@
   padding: 0;
 }
 
+@font-face {
+  font-family: "messapia-bold";
+  src: url("/src/font/messapia-bold.woff2") format("woff2");
+}
+
+html,
+body{
+  height: 100%;
+  // overflow: hidden;
+}
+html{
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: sans-serif;
+  font-family: "messapia-bold", sans-serif;
   font-size: 16px;
   line-height: 1.5;
   
@@ -21,6 +35,7 @@ body {
   display: none;
   -ms-overflow-style: none;
 }
+
 
 
 
@@ -41,15 +56,20 @@ section{
   background-image: linear-gradient(120deg, #97ebd6, #9aa6f9);
   &:nth-child(2n){
     background-image: linear-gradient(30deg, #727aef, #1900fe);
-    top: 40px;
+    // top: 40px;
   }
-
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
+
   figure{
-    width: 45%;
-    margin: auto;
+    width: 80vw;
+    @media (min-width: 768px){
+      width: 33vw;
+    }
+    margin: 0 auto;
   }
+
   img{
     opacity: 1;
   }
@@ -80,5 +100,16 @@ section{
         animation: show .7s .2s both cubic-bezier(0.77,-0.13,0.54,1.15);
       }
     }
+  }
+}
+@media (prefers-reduced-motion: no-preference) and (max-width: 400px){
+  main{
+    overflow-y: scroll;
+    height: 100vh;
+    scroll-snap-type: y mandatory;
+  }
+
+  section{
+    scroll-snap-align: start;
   }
 }
