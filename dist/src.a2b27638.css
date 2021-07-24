@@ -1,3 +1,16 @@
+@keyframes show {
+  0% {
+    opacity: 0;
+    transform: translate(0, 24px) scale(0.95);
+  }
+  80% {
+    transform: scale(1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+}
 *,
 *::before,
 *::after {
@@ -5,8 +18,21 @@
   padding: 0;
 }
 
+@font-face {
+  font-family: "messapia-bold";
+  src: url("/messapia-bold.05b16871.woff2") format("woff2");
+}
+html,
 body {
-  font-family: sans-serif;
+  height: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "messapia-bold", sans-serif;
   font-size: 16px;
   line-height: 1.5;
 }
@@ -33,16 +59,41 @@ section {
   justify-content: center;
   text-align: center;
   background-image: linear-gradient(120deg, #97ebd6, #9aa6f9);
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
 }
 section:nth-child(2n) {
   background-image: linear-gradient(30deg, #727aef, #1900fe);
-  top: 40px;
 }
 section figure {
-  width: 45%;
-  margin: auto;
+  width: 80vw;
+  margin: 0 auto;
+}
+@media (min-width: 768px) {
+  section figure {
+    width: 33vw;
+  }
+}
+section img {
+  opacity: 1;
+}
+@media (prefers-reduced-motion: no-preference) {
+  section.in-view img {
+    animation: show 0.7s 0.2s both cubic-bezier(0.77, -0.13, 0.54, 1.15);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) and (max-width: 400px) {
+  main {
+    overflow-y: scroll;
+    height: 100vh;
+    scroll-snap-type: y mandatory;
+  }
+
+  section {
+    scroll-snap-align: start;
+  }
 }
 
 /*# sourceMappingURL=/src.a2b27638.css.map */

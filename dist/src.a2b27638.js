@@ -184,16 +184,41 @@ function reloadCSS() {
 }
 
 module.exports = reloadCSS;
-},{"./bundle-url":"node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"src/styles.scss":[function(require,module,exports) {
+},{"./bundle-url":"node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"src/animation.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/index.js":[function(require,module,exports) {
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/styles.scss":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"C:\\Users\\Harold AO\\Documents\\experience-3d-image-rotation\\src\\font\\messapia-bold.woff2":[["messapia-bold.05b16871.woff2","src/font/messapia-bold.woff2"],"src/font/messapia-bold.woff2"],"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/index.js":[function(require,module,exports) {
 "use strict";
 
+require("./animation.scss");
+
 require("./styles.scss");
-},{"./styles.scss":"src/styles.scss"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+
+// import "./scroll";
+var sections = document.querySelectorAll("section");
+var observer = new IntersectionObserver(function (entries) {
+  entries.forEach(function (entry) {
+    if (entry.intersectionRatio > 0.1) {
+      entry.target.classList.add("in-view");
+    } else {
+      entry.target.classList.remove("in-view");
+    }
+  });
+}, {
+  threshold: [0.1, 0.3, 1.0]
+});
+sections.forEach(function (section) {
+  observer.observe(section);
+  console.log(section);
+});
+},{"./animation.scss":"src/animation.scss","./styles.scss":"src/styles.scss"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -221,7 +246,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60010" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54136" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
