@@ -151,6 +151,7 @@ section figure {
 @media (min-width: 768px) {
   section figure {
     width: 33vw;
+    width: 24vw;
   }
 }
 section figure figcaption {
