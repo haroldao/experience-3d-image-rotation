@@ -22,7 +22,9 @@ html{
 body {
   font-family: "messapia-bold", sans-serif;
   font-size: 16px;
-  line-height: 1.5;
+  line-height: 1.25;
+  text-transform: uppercase;
+  color: white;
   
   //Smooth Scroll
   &::-webkit-scrollbar{
@@ -36,8 +38,13 @@ body {
   -ms-overflow-style: none;
 }
 
-
-
+a{
+  list-style: none;
+  // color: white;
+  color: inherit;
+  text-decoration: none;
+  pointer-events: auto;
+}
 
 img{
   max-width: 100%;
@@ -47,16 +54,19 @@ img{
 
 section{
   height: 100vh;
-
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
   background-image: linear-gradient(120deg, #97ebd6, #9aa6f9);
+  background-image: linear-gradient(120deg, #497cdd, #5076db);
   &:nth-child(2n){
-    background-image: linear-gradient(30deg, #727aef, #1900fe);
-    // top: 40px;
+    // background-image: linear-gradient(30deg, #727aef, #1900fe);
+    background-image: linear-gradient(30deg, #1a66cb, #1b233e);
+    figcaption{
+      color: black;
+    }
   }
   position: -webkit-sticky;
   position: sticky;
@@ -68,31 +78,28 @@ section{
       width: 33vw;
     }
     margin: 0 auto;
+    figcaption{
+      color: white;
+      font-size: 1.2em;
+      pointer-events: none;
+      @media (min-width: 768px){
+        font-size: 3em;
+      }
+      position: fixed;
+      top: 70%;
+      left: 50%;
+      width: 100%;
+      transform: translate(-50%, -50%);
+      &.social{
+        position: absolute;
+      }
+    }
   }
 
   img{
     opacity: 1;
   }
-  // img{
-  //   padding: 120px;
-  // }
 
-  // figure{
-  //   position: absolute;
-  //   top: 0;
-  //   left: 0;
-  //   width: 100%;
-  //   height: 100%;
-  //   text-align: center;
-  //   padding: 120px;
-
-  //   div{
-  //     height: 100%;
-  //     display: flex;
-  //     align-items: center;
-  //     justify-content: center;
-  //   }
-  // }
   &.in-view{
     // media user motion
     @media (prefers-reduced-motion: no-preference){
@@ -102,6 +109,7 @@ section{
     }
   }
 }
+
 @media (prefers-reduced-motion: no-preference) and (max-width: 400px){
   main{
     overflow-y: scroll;
